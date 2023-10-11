@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1021387992029",
+    "project_id": "nics-10c6c",
+    "storage_bucket": "nics-10c6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021387992029:android:5493d78657589774926434",
+        "android_client_info": {
+          "package_name": "com.example.employerpage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSQ1H8AAN6nUXuwYPe61l9Y2t7hy800Ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
