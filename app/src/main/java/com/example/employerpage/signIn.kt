@@ -29,23 +29,37 @@ class signIn : AppCompatActivity() {
             val radioJobSeeker = binding.radioJobSeeker
             val radioJobProvider = binding.radioJobProvider
 
-            val isJobSeeker = jobTypeRadioGroup.checkedRadioButtonId == radioJobSeeker.id// True False
+            val isJobSeeker = jobTypeRadioGroup.checkedRadioButtonId == radioJobSeeker.id
+            val isJobProvider = jobTypeRadioGroup.checkedRadioButtonId == radioJobProvider.id
+
             if (sEmail.isNotEmpty() && sPassword.isNotEmpty()) {
-                firebaseAuth.signInWithEmailAndPassword(sEmail, sPassword).addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        val intent = if (isJobSeeker) {
-                            Intent(applicationContext, seekerAbout::class.java)
+                firebaseAuth.signInWithEmailAndPassword(sEmail, sPassword)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val intent = if (isJobSeeker) {
+                                Intent(applicationContext, seekerDataInput::class.java)
+                            } else if (isJobProvider) {
+                                Intent(applicationContext, postJob::class.java)
+                            } else {
+                                // Handle the case when neither Job Seeker nor Job Provider is selected.
+                                // You can display a Toast or navigate to a default activity.
+                                Toast.makeText(
+                                    this,
+                                    "Ab Select bhi m kru ki tu kon hai",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                return@addOnCompleteListener
+                            }
+                            startActivity(intent)
                         } else {
-                            Intent(applicationContext, postJob::class.java)
+                            Toast.makeText(this, "User to bnja mere Bhai", Toast.LENGTH_LONG).show()
                         }
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, "Are Baba user hi create nhi hua", Toast.LENGTH_LONG).show()
                     }
-                }
             } else {
-                Toast.makeText(this, "Abe email or password m Bharne aau kya", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Ye bhi M hi bhru kyu", Toast.LENGTH_LONG).show()
             }
         }
     }
 }
+
+

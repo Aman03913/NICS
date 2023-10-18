@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployerPage"
         tools:targetApi="31">
+        <activity
+            android:name=".seekerDetailsPage"
+            android:exported="false"
+            android:label="@string/title_activity_seeker_details_page"
+            android:theme="@style/Theme.EmployerPage" />
+        <activity
+            android:name=".seekerDataInput"
+            android:exported="false"
+            android:label="@string/title_activity_seeker_data_input"
+            android:theme="@style/Theme.EmployerPage" />
+
+        <activity
+            android:name=".jobsPage"
+            android:exported="false"
+            android:label="@string/title_activity_jobvisibletoseeker"
+            android:theme="@style/Theme.EmployerPage" />
+
         <activity
             android:name=".signIn"
             android:exported="false"
@@ -28,18 +47,8 @@
             android:exported="false"
             android:label="@string/title_activity_splashscreen"
             android:theme="@style/Theme.EmployerPage" />
-        <activity
-            android:name=".seekerAbout"
-            android:exported="false"
-            android:label="@string/title_activity_appliedperson"
-            android:theme="@style/Theme.EmployerPage" />
-        <activity
-            android:name=".jobsPage"
-            android:exported="false"
-            android:label="@string/title_activity_jobs_page"
-            android:theme="@style/Theme.EmployerPage" />
-        <activity
 
+        <activity
             android:name=".splashscreen"
             android:exported="true">
             <intent-filter>

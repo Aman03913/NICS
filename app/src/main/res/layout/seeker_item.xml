@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="20dp"
+    android:backgroundTint="@color/light"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/tvfullName"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:text="Full Name"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/tvjobTitle"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:text="Job Title"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textSize="20dp"
+            android:id="@+id/tvlocation"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Experience"
+            android:textSize="20dp"
+            android:id="@+id/tvExperience"></TextView>
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -47,4 +47,10 @@
     <string name="title_activity_splashscreen">splashscreen</string>
     <string name="title_activity_sign_in">signInActivity</string>
     <string name="title_activity_sign_up">signUp</string>
+    <string name="title_activity_about_seeker">aboutSeeker</string>
+    <string name="title_activity_seeker_details">seekerDetails</string>
+    <string name="title_activity_jobvisibletoseeker">jobvisibletoseeker</string>
+    <string name="title_activity_seeker_data">seekerData</string>
+    <string name="title_activity_seeker_data_input">seekerDataInput</string>
+    <string name="title_activity_seeker_details_page">seekerDetailsPage</string>
 </resources>

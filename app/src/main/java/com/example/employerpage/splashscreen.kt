@@ -1,26 +1,26 @@
 package com.example.employerpage
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
+import com.google.firebase.storage.StorageReference
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.employerpage.databinding.ActivitySplashscreenBinding
-
+import android.util.Log
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 class splashscreen : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splashscreen)
         Handler().postDelayed({
             val intent = Intent(applicationContext, signIn::class.java)
             startActivity(intent)
-        },5000)
+        },3000)
 
+}
+}
 
-        }
-    }
 

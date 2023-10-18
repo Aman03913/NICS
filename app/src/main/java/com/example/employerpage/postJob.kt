@@ -24,7 +24,7 @@ class postJob : AppCompatActivity() {
     private  var db=Firebase.firestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.postjobs)
         jobTitle=findViewById(R.id.jobTitleEditText)
         companyName=findViewById(R.id.companyNameEditText)
         jD= findViewById(R.id.jobDescriptionEditText)
@@ -67,15 +67,15 @@ class postJob : AppCompatActivity() {
                 .addOnFailureListener {
                     Toast.makeText(this, "Job is Not Posted", Toast.LENGTH_SHORT).show()
                 }
-            intent= Intent(applicationContext,jobsPage::class.java)
-            startActivity(intent)
+          val intent= Intent(applicationContext,seekerDetailsPage::class.java)
+          startActivity(intent)
 
 
         }
         val skipJobPostClick = findViewById<TextView>(R.id.skipJobPost)
         skipJobPostClick.setOnClickListener {
-            val i = Intent(this, seekerAbout::class.java)
-            startActivity(i)
+            //val i = Intent(this, seekerDetails::class.java)
+            //startActivity(i)
         }
 
     }

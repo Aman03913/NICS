@@ -26,14 +26,12 @@ class jobsPage : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-
         jobArrayList = arrayListOf()
         myAdapter = MyAdapter(jobArrayList)
         recyclerView.adapter = myAdapter
 
         db = FirebaseFirestore.getInstance()
 
-        // Call the event change listener
 
         db.collection("Job Post")
             .get()

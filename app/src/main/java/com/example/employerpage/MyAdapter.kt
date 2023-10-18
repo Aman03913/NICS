@@ -31,3 +31,4 @@ class MyAdapter(private val jobList: ArrayList<job>): RecyclerView.Adapter<MyAda
         val tvloc: TextView = itemView.findViewById(R.id.location)
     }
 }
+
