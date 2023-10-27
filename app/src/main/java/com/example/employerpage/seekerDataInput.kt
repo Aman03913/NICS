@@ -68,6 +68,11 @@ class seekerDataInput : AppCompatActivity() {
             startActivityForResult(intent, PICK_PDF_REQUEST)
         }
 
+        binding.skipJobPost.setOnClickListener {
+            val i=Intent(applicationContext,jobsPage::class.java)
+            startActivity(i)
+        }
+
 
 
     }

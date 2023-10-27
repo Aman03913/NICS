@@ -36,8 +36,13 @@
             android:text="Experience"
             android:textSize="20dp"
             android:id="@+id/tvExperience"></TextView>
-
-
+        <!-- Add the WebView to your XML layout where you want to display the PDF -->
+        <WebView
+            android:id="@+id/pdfWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/selectedResumeTextView"
+            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

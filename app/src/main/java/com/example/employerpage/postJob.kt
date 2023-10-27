@@ -74,8 +74,8 @@ class postJob : AppCompatActivity() {
         }
         val skipJobPostClick = findViewById<TextView>(R.id.skipJobPost)
         skipJobPostClick.setOnClickListener {
-            //val i = Intent(this, seekerDetails::class.java)
-            //startActivity(i)
+            val i = Intent(this, seekerDetailsPage::class.java)
+            startActivity(i)
         }
 
     }

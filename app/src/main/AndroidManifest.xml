@@ -16,6 +16,11 @@
         android:theme="@style/Theme.EmployerPage"
         tools:targetApi="31">
         <activity
+            android:name=".jobDetail"
+            android:exported="false"
+            android:label="@string/title_activity_job_detail"
+            android:theme="@style/Theme.EmployerPage" />
+        <activity
             android:name=".seekerDetailsPage"
             android:exported="false"
             android:label="@string/title_activity_seeker_details_page"
@@ -25,13 +30,11 @@
             android:exported="false"
             android:label="@string/title_activity_seeker_data_input"
             android:theme="@style/Theme.EmployerPage" />
-
         <activity
             android:name=".jobsPage"
             android:exported="false"
             android:label="@string/title_activity_jobvisibletoseeker"
             android:theme="@style/Theme.EmployerPage" />
-
         <activity
             android:name=".signIn"
             android:exported="false"
@@ -47,7 +50,6 @@
             android:exported="false"
             android:label="@string/title_activity_splashscreen"
             android:theme="@style/Theme.EmployerPage" />
-
         <activity
             android:name=".splashscreen"
             android:exported="true">

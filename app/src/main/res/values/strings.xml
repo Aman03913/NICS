@@ -53,4 +53,6 @@
     <string name="title_activity_seeker_data">seekerData</string>
     <string name="title_activity_seeker_data_input">seekerDataInput</string>
     <string name="title_activity_seeker_details_page">seekerDetailsPage</string>
+    <string name="title_activity_job_detailed_page_click">jobDetailedPageClick</string>
+    <string name="title_activity_job_detail">jobDetail</string>
 </resources>

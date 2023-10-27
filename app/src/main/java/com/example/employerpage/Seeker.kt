@@ -7,7 +7,5 @@ data class Seeker(
     val jobTitle :String?=null,
     val location :String?=null,
     val experience :String?=null,
-
-
-
+    val pdfUrl: String? = null
 )
