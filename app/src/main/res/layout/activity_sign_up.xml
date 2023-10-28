@@ -120,9 +120,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-
-
         <Button
             android:id="@+id/btnsignUp"
             android:layout_marginTop="20dp"
@@ -134,4 +131,5 @@
             android:text="Sign Up" />
 
     </LinearLayout>
+
 </ScrollView>

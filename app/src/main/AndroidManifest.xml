@@ -16,6 +16,14 @@
         android:theme="@style/Theme.EmployerPage"
         tools:targetApi="31">
         <activity
+            android:name=".jobPostedByEmployer"
+            android:exported="false" />
+        <activity
+            android:name=".postJobDescription"
+            android:exported="false"
+            android:label="@string/title_activity_post_job_description"
+            android:theme="@style/Theme.EmployerPage" />
+        <activity
             android:name=".jobDetail"
             android:exported="false"
             android:label="@string/title_activity_job_detail"

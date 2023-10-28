@@ -23,6 +23,7 @@ class signUp : AppCompatActivity() {
             val sPassword = binding.userPassword.text.toString().trim()
 
 
+
             if (sEmail.isNotEmpty() && sPassword.isNotEmpty()) {
                 firebaseAuth.createUserWithEmailAndPassword(sEmail, sPassword)
                     .addOnCompleteListener { task ->
