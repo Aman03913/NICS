@@ -17,7 +17,7 @@ class jobPostedByEmployer : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_jobs_page)
+        setContentView(R.layout.activity_job_posted_by_employer)
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)

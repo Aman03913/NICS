@@ -16,6 +16,21 @@
         android:theme="@style/Theme.EmployerPage"
         tools:targetApi="31">
         <activity
+            android:name=".JobDetailsforSeeker"
+            android:exported="false" />
+        <activity
+            android:name=".JobPageforSeeker"
+            android:exported="false" />
+        <activity
+            android:name=".jobDetailtoProvider"
+            android:exported="false" />
+        <activity
+            android:name=".MyAdaptertoProvider"
+            android:exported="false" />
+        <activity
+            android:name=".jobDetailstoProvider"
+            android:exported="false" />
+        <activity
             android:name=".jobPostedByEmployer"
             android:exported="false" />
         <activity

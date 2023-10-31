@@ -57,7 +57,7 @@ class seekerDataInput : AppCompatActivity() {
                     Toast.makeText(this, "GadBad Hogyi bhnchod", Toast.LENGTH_SHORT).show()
                 }
 
-            val intent=Intent(applicationContext,jobsPage::class.java)
+            val intent=Intent(applicationContext,JobPageforSeeker::class.java)
             startActivity(intent)
 
         }
@@ -69,7 +69,7 @@ class seekerDataInput : AppCompatActivity() {
         }
 
         binding.skipJobPost.setOnClickListener {
-            val i=Intent(applicationContext,jobsPage::class.java)
+            val i=Intent(applicationContext,JobPageforSeeker::class.java)
             startActivity(i)
         }
 
