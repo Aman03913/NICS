@@ -162,6 +162,7 @@
                     </TextView>
                 </ScrollView>
                 <Button
+                    android:id="@+id/applyBtn"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:text="Apply for this job">

@@ -1,5 +1,6 @@
 package com.example.employerpage
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -13,21 +14,18 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.employerpage.databinding.ActivityJobDetailBinding
 
 class jobDetail : AppCompatActivity() {
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_job_detail)
-        // Extract job details from the Intent extras
 
         val jobTitle = intent.getStringExtra("jobTitle") ?: "Default Title"
         val companyName = intent.getStringExtra("companyName") ?: "Default Company"
-        val jobDescription=intent.getStringExtra("JobDesciption") ?: "Default Company"
+        val jobDescription=intent.getStringExtra("JobDescription") ?: "Default Company"
         val salary=intent.getStringExtra("Salary") ?: "Default Company"
         val location=intent.getStringExtra("Location") ?: "Default Company"
         val qualification=intent.getStringExtra("Qualifiaction")?: "Default Company"
-        // Extract more details as needed
 
-        // Populate TextViews with job details
         val titleTextView = findViewById<TextView>(R.id.Details_jobTitle)
         titleTextView.text = jobTitle
 
@@ -45,6 +43,14 @@ class jobDetail : AppCompatActivity() {
 
         val qualificationTextView = findViewById<TextView>(R.id.details_Qualification)
         qualificationTextView.text = qualification
+
+        val btnApplied=findViewById<Button>(R.id.WhoAppliedBtn)
+
+        btnApplied.setOnClickListener {
+            val i= Intent(this,seekerDetailsPage::class.java)
+            startActivity(i)
+
+        }
 
 
 

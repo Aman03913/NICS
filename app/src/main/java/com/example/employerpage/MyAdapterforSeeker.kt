@@ -18,8 +18,7 @@ class MyAdapterforSeeker(private val jobList: ArrayList<job>): RecyclerView.Adap
         holder.tvtitle.text=jobList[position].jobTitle
         holder.tvcompanyName.text=jobList[position].companyName
         holder.tvloc.text=jobList[position].Location
-        holder.tvtitle.text = jobList[position].jobTitle
-        // Add OnClickListener to handle item clicks
+
         holder.itemView.setOnClickListener {
             // Create an Intent to start the jobDetail activity
             val intent = Intent(holder.itemView.context, JobDetailsforSeeker::class.java) ///
@@ -27,9 +26,9 @@ class MyAdapterforSeeker(private val jobList: ArrayList<job>): RecyclerView.Adap
             intent.putExtra("jobTitle", jobList[position].jobTitle)
             intent.putExtra("companyName", jobList[position].companyName)
             intent.putExtra("Location", jobList[position].Location)
-            intent.putExtra("Qualifiaction", jobList[position].Qualifiaction)
+            intent.putExtra("Qualification", jobList[position].Qualification)
             intent.putExtra("Salary", jobList[position].Salary)
-            intent.putExtra("JobDesciption", jobList[position].JobDesciption)
+            intent.putExtra("JobDescription", jobList[position].JobDescription)
 
             // Add more details as needed
             // Start the activity

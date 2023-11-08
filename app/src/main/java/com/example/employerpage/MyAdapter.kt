@@ -28,9 +28,9 @@ class MyAdapter(private val jobList: ArrayList<job>): RecyclerView.Adapter<MyAda
             intent.putExtra("jobTitle", jobList[position].jobTitle)
             intent.putExtra("companyName", jobList[position].companyName)
             intent.putExtra("Location", jobList[position].Location)
-            intent.putExtra("Qualifiaction", jobList[position].Qualifiaction)
+            intent.putExtra("Qualification", jobList[position].Qualification)
             intent.putExtra("Salary", jobList[position].Salary)
-            intent.putExtra("JobDesciption", jobList[position].JobDesciption)
+            intent.putExtra("JobDescription", jobList[position].JobDescription)
 
 
 

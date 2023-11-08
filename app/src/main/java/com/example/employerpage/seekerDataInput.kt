@@ -8,10 +8,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.employerpage.databinding.ActivitySeekerDataInputBinding
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.ktx.firestore
@@ -21,11 +17,11 @@ import com.google.firebase.storage.StorageReference
 
 class seekerDataInput : AppCompatActivity() {
 
-    private var db=Firebase.firestore
+    private val db = Firebase.firestore
     private lateinit var binding: ActivitySeekerDataInputBinding
     lateinit var mStorage: StorageReference
     private val PICK_PDF_REQUEST = 1
-    lateinit var uri : Uri
+    lateinit var uri: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,33 +30,39 @@ class seekerDataInput : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.submitButton.setOnClickListener {
-            val fullNameSeeker=binding.nameEditText.text.toString().trim()
-            val jobTitleSeeker=binding.jobTitleEditText.text.toString().trim()
-            val locationSeeker=binding.locationEditText.text.toString().trim()
-            val experienceSeeker=binding.experienceEditText.text.toString().trim()
+            val fullNameSeeker = binding.nameEditText.text.toString().trim()
+            val jobTitleSeeker = binding.jobTitleEditText.text.toString().trim()
+            val locationSeeker = binding.locationEditText.text.toString().trim()
+            val experienceSeeker = binding.experienceEditText.text.toString().trim()
+            val intent = Intent(this, JobDetailsforSeeker::class.java)
 
-            val seekerMap= hashMapOf(
+            // Add the data as extras to the Intent
+            intent.putExtra("fullname", fullNameSeeker)
+            intent.putExtra("jobTitle", jobTitleSeeker)
+            intent.putExtra("location", locationSeeker)
+            intent.putExtra("experience", experienceSeeker)
+            
+
+            val seekerMap = hashMapOf(
                 "fullname" to fullNameSeeker,
                 "jobTitle" to jobTitleSeeker,
                 "location" to locationSeeker,
                 "experience" to experienceSeeker
             )
-            db.collection("seekerDetails").document().set(seekerMap)
+
+            db.collection("seekerDetails").add(seekerMap)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Job Seeker Added Succesfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Job Seeker Added Successfully", Toast.LENGTH_SHORT).show()
                     binding.nameEditText.text.clear()
                     binding.jobTitleEditText.text.clear()
                     binding.locationEditText.text.clear()
                     binding.experienceEditText.text.clear()
-
-                }.addOnFailureListener {
-                    Toast.makeText(this, "GadBad Hogyi bhnchod", Toast.LENGTH_SHORT).show()
                 }
-
-            val intent=Intent(applicationContext,JobPageforSeeker::class.java)
-            startActivity(intent)
-
+                .addOnFailureListener {
+                    Toast.makeText(this, "Failed to add job seeker", Toast.LENGTH_SHORT).show()
+                }
         }
+
         val pickPdfButton = findViewById<Button>(R.id.chooseResumeButton)
         pickPdfButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
@@ -69,13 +71,11 @@ class seekerDataInput : AppCompatActivity() {
         }
 
         binding.skipJobPost.setOnClickListener {
-            val i=Intent(applicationContext,JobPageforSeeker::class.java)
+            val i = Intent(applicationContext, JobPageforSeeker::class.java)
             startActivity(i)
         }
-
-
-
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK) {
             uri = data?.data!!
@@ -84,7 +84,7 @@ class seekerDataInput : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    private fun upload(){
+    private fun upload() {
         var mReference = uri.lastPathSegment?.let { mStorage.child(it) }
         try {
             if (mReference != null) {
@@ -102,6 +102,4 @@ class seekerDataInput : AppCompatActivity() {
             Toast.makeText(this, "Thik se upload kr bhai", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 }
