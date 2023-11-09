@@ -28,19 +28,19 @@ class seekerAdapter(private val seekerList: ArrayList<Seeker>) : RecyclerView.Ad
         holder.locationSeeker.text = seeker.location
         holder.experienceSeeker.text = seeker.experience
         // Inside your ViewHolder's click listener in onBindViewHolder
-        val pdfUrl = seeker.pdfUrl
-        if (pdfUrl != null) {
-            holder.pdfWebView.settings.javaScriptEnabled = true
-            holder.pdfWebView.settings.loadWithOverviewMode = true
-            holder.pdfWebView.settings.useWideViewPort = true
-            holder.pdfWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=$pdfUrl")
-            holder.pdfWebView.webViewClient = object : WebViewClient() {
-                override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
-                    super.onReceivedError(view, request, error)
-                    Toast.makeText(holder.itemView.context, "Error loading PDF", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
+//        val pdfUrl = seeker.pdfUrl
+//        if (pdfUrl != null) {
+//            holder.pdfWebView.settings.javaScriptEnabled = true
+//            holder.pdfWebView.settings.loadWithOverviewMode = true
+//            holder.pdfWebView.settings.useWideViewPort = true
+//            holder.pdfWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=$pdfUrl")
+//            holder.pdfWebView.webViewClient = object : WebViewClient() {
+//                override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+//                    super.onReceivedError(view, request, error)
+//                    Toast.makeText(holder.itemView.context, "Error loading PDF", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
 
 
 
@@ -57,7 +57,7 @@ class seekerAdapter(private val seekerList: ArrayList<Seeker>) : RecyclerView.Ad
         val jobTitleSeeker: TextView = itemView.findViewById(R.id.tvjobTitle)
         val locationSeeker: TextView = itemView.findViewById(R.id.tvlocation)
         val experienceSeeker: TextView = itemView.findViewById(R.id.tvExperience)
-        val pdfWebView: WebView = itemView.findViewById(R.id.pdfWebView)
+
 
 
 

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_margin="20dp"
-    android:backgroundTint="@color/light"
+    app:cardBackgroundColor="#DCDCDC"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -36,13 +36,7 @@
             android:text="Experience"
             android:textSize="20dp"
             android:id="@+id/tvExperience"></TextView>
-        <!-- Add the WebView to your XML layout where you want to display the PDF -->
-        <WebView
-            android:id="@+id/pdfWebView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/selectedResumeTextView"
-            android:layout_marginTop="8dp" />
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

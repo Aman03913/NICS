@@ -26,23 +26,11 @@
         <activity
             android:name=".JobPageforSeeker"
             android:exported="false" />
-        <activity
-            android:name=".jobDetailtoProvider"
-            android:exported="false" />
-        <activity
-            android:name=".MyAdaptertoProvider"
-            android:exported="false" />
-        <activity
-            android:name=".jobDetailstoProvider"
-            android:exported="false" />
+
         <activity
             android:name=".jobPostedByEmployer"
             android:exported="false" />
-        <activity
-            android:name=".postJobDescription"
-            android:exported="false"
-            android:label="@string/title_activity_post_job_description"
-            android:theme="@style/Theme.EmployerPage" />
+
         <activity
             android:name=".jobDetail"
             android:exported="false"
